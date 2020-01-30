@@ -111,6 +111,9 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<bool>("ShowPrice")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CatalogBrandId");
