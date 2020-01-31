@@ -16,7 +16,7 @@ namespace Microsoft.eShopWeb.UnitTests.Web.Extensions.CacheHelpersTests
 
             var result = CacheHelpers.GenerateCatalogItemCacheKey(pageIndex, Constants.ITEMS_PER_PAGE, searchText, brandId, typeId);
 
-            Assert.Equal("items-0-10--", result);
+            Assert.Equal("items-0-10---", result);
         }
     }
 }
