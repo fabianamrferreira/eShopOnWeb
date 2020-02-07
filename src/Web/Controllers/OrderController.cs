@@ -41,18 +41,6 @@ namespace Microsoft.eShopWeb.Web.Controllers
             return View(viewModel);
         }
 
-        private string GetDetailedStatus(string status)
-        {
-            if (status == "Pending") return status;
-            if (status == "Out for Delivery")
-            {
-                return $"{status} - ETA {DateTime.Now.AddHours(1).ToShortTimeString()}";
-            }
-            if (status == "Delivered")
-            {
-                return $"{status} at {DateTime.Now.AddHours(-1).ToShortTimeString()}";
-            }
-            return "Unknown";
-        }
+
     }
 }
