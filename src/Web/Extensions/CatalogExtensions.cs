@@ -27,6 +27,9 @@ namespace Microsoft.eShopWeb.Web.Services
             services.Configure<CatalogSettings>(configuration);
             services.AddSingleton<IUriComposer>(new UriComposer(configuration.Get<CatalogSettings>()));
 
+            services.AddScoped<IWishlistService, WishlistService>();
+            services.AddScoped<IWishlistViewModelService, WishlistViewModelService>();
+
     }
 }
 }

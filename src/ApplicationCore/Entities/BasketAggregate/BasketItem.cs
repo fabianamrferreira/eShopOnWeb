@@ -7,4 +7,5 @@
         public int CatalogItemId { get; set; }
         public int BasketId { get; private set; }
     }
+     
 }

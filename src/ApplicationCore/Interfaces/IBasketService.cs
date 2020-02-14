@@ -10,5 +10,6 @@ namespace Microsoft.eShopWeb.ApplicationCore.Interfaces
         Task AddItemToBasket(int basketId, int catalogItemId, decimal price, int quantity = 1);
         Task SetQuantities(int basketId, Dictionary<string, int> quantities);
         Task DeleteBasketAsync(int basketId);
+        
     }
 }

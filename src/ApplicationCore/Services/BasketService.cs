@@ -5,6 +5,9 @@ using Microsoft.eShopWeb.ApplicationCore.Specifications;
 using System.Linq;
 using Ardalis.GuardClauses;
 using Microsoft.eShopWeb.ApplicationCore.Entities.BasketAggregate;
+using Microsoft.eShopWeb.ApplicationCore.Entities.WishlistAggregate;
+using Microsoft.eShopWeb.ApplicationCore.Entities;
+using ApplicationCore.Exceptions;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Services
 {
@@ -14,10 +17,12 @@ namespace Microsoft.eShopWeb.ApplicationCore.Services
         private readonly IAppLogger<BasketService> _logger;
 
         public BasketService(IAsyncRepository<Basket> basketRepository,
-            IAppLogger<BasketService> logger)
+            IAppLogger<BasketService> logger
+            )
         {
             _basketRepository = basketRepository;
             _logger = logger;
+           
         }
 
         public async Task AddItemToBasket(int basketId, int catalogItemId, decimal price, int quantity = 1)
@@ -77,5 +82,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Services
             basket.BuyerId = userName;
             await _basketRepository.UpdateAsync(basket);
         }
+
+         
     }
 }
