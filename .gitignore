@@ -260,3 +260,5 @@ pub/
 \.vscode/
 
 appsettings.Azure.json
+
+appsettings.Auth0.json
