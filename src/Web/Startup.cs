@@ -167,6 +167,17 @@ namespace Microsoft.eShopWeb.Web {
             services.AddRazorPages(options => {
                 options.Conventions.AuthorizePage("/Basket/Checkout");
             });
+
+            services.AddAuthentication()
+            .AddGoogle(options =>
+            {
+                IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
+
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+            });
+
             services.AddControllersWithViews();
 
             services.AddHttpContextAccessor();
