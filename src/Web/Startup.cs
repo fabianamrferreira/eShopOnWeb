@@ -147,6 +147,8 @@ namespace Microsoft.eShopWeb.Web {
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddTransient<IEmailSender, EmailSender>();
 
+            services.Configure<AuthMessageSenderOptions>(Configuration);
+
             // Add memory cache services
             services.AddMemoryCache();
 
